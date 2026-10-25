@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
     db.close_db()     # runs once when the server stops
 
 
-app = FastAPI(title="Error Translator", lifespan=lifespan)
+app = FastAPI(title="Error Bro", lifespan=lifespan)
 
 
 # ---------- Error handlers: every error leaves the server in the same shape ----------
