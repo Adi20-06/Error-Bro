@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+openai
+python-dotenv
+aiofiles
+psycopg[binary,pool]

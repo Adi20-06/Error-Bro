@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error Translator</title>
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">&lt;/&gt;</div>
+        <div>
+          <h1>Error Translator</h1>
+          <p>Paste. Understand. Fix.</p>
+        </div>
+      </div>
+
+      <button class="primary-btn full" id="new-chat">＋ New chat</button>
+
+      <div class="side-section">
+        <h4>Errors I can explain</h4>
+        <ul class="topic-list" id="topic-list"></ul>
+      </div>
+
+      <div class="tip">
+        <div class="tip-icon">🔒</div>
+        <h4>Privacy</h4>
+        <p>Your messages are sent to an external AI service to write the replies, and conversations are saved in a database with timestamps to help improve the bot. Please don't paste passwords, names, phone numbers or private code.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn" id="menu-btn" aria-label="Open menu">☰</button>
+        <strong>Error Translator</strong>
+        <button class="icon-btn" id="new-chat-top" aria-label="New chat">＋</button>
+      </header>
+
+      <section class="chat" id="chat" aria-live="polite">
+        <div class="chat-inner" id="chat-inner">
+
+          <div class="welcome card" id="welcome">
+            <h2>Hi, I'm Error Translator ⚡</h2>
+            <p>Paste a programming error and I'll explain it in plain English.</p>
+            <ul>
+              <li>What the error <strong>means</strong></li>
+              <li>The <strong>likely causes</strong>, most likely first</li>
+              <li><strong>How to investigate</strong> it, step by step</li>
+              <li>The <strong>concept</strong> behind it</li>
+            </ul>
+            <p class="small">I check my notes library first, and for other errors I use general AI knowledge and tell you when I do. Answers can be wrong, so double-check them in the official docs. I remember this conversation, so you can ask follow-ups like "show me the code".</p>
+            <div class="chips">
+              <button class="chip" data-text="Segmentation fault (core dumped)">Segmentation fault</button>
+              <button class="chip" data-text="TypeError: Cannot read properties of undefined (reading 'map')">Undefined property</button>
+              <button class="chip" data-text="ModuleNotFoundError: No module named 'numpy'">ModuleNotFoundError</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <form class="composer" id="chat-form">
+        <div class="composer-box">
+          <textarea id="user-input" rows="1" placeholder="Paste your error message here..." aria-label="Your message"></textarea>
+          <button type="submit" id="send-btn" aria-label="Send">➤</button>
+        </div>
+        <div class="composer-foot">
+          <span>Enter to send · Shift+Enter for a new line</span>
+          <span id="counter"></span>
+        </div>
+      </form>
+      <p class="privacy-line">Messages are sent to an external AI service and saved to improve the bot. Answers can be wrong, so check the linked docs.</p>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js?v=2"></script>
+</body>
+</html>
